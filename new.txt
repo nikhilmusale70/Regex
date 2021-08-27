@@ -1,0 +1,9 @@
+apple
+ant
+ball
+cat
+elephant
+monkey
+dog
+snake
+donkey
