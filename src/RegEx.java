@@ -13,6 +13,8 @@ public class RegEx {
         String email = sc.nextLine();
         System.out.print("Enter phone number :-");
         String phoneNumber = sc.nextLine();
+        System.out.print("Enter Password : ");
+        String password=sc.nextLine();
 
         if(validUserName(firstName))
             System.out.println("First name is valid");
@@ -33,6 +35,11 @@ public class RegEx {
             System.out.println("email name is valid");
         else
             System.out.println("email name invalid");
+
+        if(getPassword(password))
+            System.out.println("Password is correct ");
+        else
+            System.out.println("Password is not correct");
 
     }
 
@@ -65,5 +72,12 @@ public class RegEx {
         Matcher m = p.matcher(phoneNumber);
         return m.matches();
     }
-    
+
+    public static boolean getPassword(String str)
+    {
+        String reg="[a-zA-Z0-9]{8,}";
+        Pattern p=Pattern.compile(reg);
+        return p.matcher(str).matches();
+    }
+
 }
