@@ -11,6 +11,8 @@ public class RegEx {
         String lastName = sc.nextLine();
         System.out.print("Enter your email id :-");
         String email = sc.nextLine();
+        System.out.print("Enter phone number :-");
+        String phoneNumber = sc.nextLine();
 
         if(validUserName(firstName))
             System.out.println("First name is valid");
@@ -23,6 +25,11 @@ public class RegEx {
             System.out.println("Last name invalid");
 
         if (emailValidation(email))
+            System.out.println("email name is valid");
+        else
+            System.out.println("email name invalid");
+
+        if (phoneValidation(phoneNumber))
             System.out.println("email name is valid");
         else
             System.out.println("email name invalid");
@@ -48,4 +55,15 @@ public class RegEx {
         Matcher m = p.matcher(email);
         return m.matches();
     }
+
+    public static boolean phoneValidation(String phoneNumber){
+        String regEx = "[0-9]{2}\\s[0-9]{10}";
+        Pattern p = Pattern.compile(regEx);
+
+        if (phoneNumber == null)
+            return false;
+        Matcher m = p.matcher(phoneNumber);
+        return m.matches();
+    }
+    
 }
