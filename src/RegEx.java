@@ -75,7 +75,7 @@ public class RegEx {
 
     public static boolean getPassword(String str)
     {
-        String reg="[a-zA-Z0-9]{8,}";
+        String reg="[a-z0-9[A-Z]+]{8,}";
         Pattern p=Pattern.compile(reg);
         return p.matcher(str).matches();
     }
